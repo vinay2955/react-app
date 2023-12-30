@@ -1,23 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+//import ParentProduct from './Components/ParentProduct';
+//import Practice from './Components/ClassComponents';
+//import FunctionComponent from './Components/FunctionComponents'
+//import ParentComponent from './Components/ParentComponent';
+//import ParentProduct from './DiscountMarket/ParentProduct';
+//import Login from './Login/Login';
+//import Form from './FormHandling/Form';
+//import LoginForm from './FormHandling/LoginForm';
+import LoginForm from './FormHandling/LoginForm';
+//import TemperatureConvert from './Temperature/TemperatureConvert';
+//import TshirtFilter from './TshirtFilter/TshirtFilter';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+  <LoginForm/>
     </div>
   );
 }
