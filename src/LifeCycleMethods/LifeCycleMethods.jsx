@@ -8,6 +8,7 @@ export default class LifeCycleMethods extends Component {
       userDetails: [],
       searchId: "",
       userFound: null,
+      unmount: false,
     };
   }
   static getDerivedStateFromProps(nextProps, prevpState) {
@@ -38,7 +39,6 @@ export default class LifeCycleMethods extends Component {
     this.setState({ searchId: e.target.value });
   };
   handleSearch = () => {
-    console.log("123");
     const { searchId, userDetails } = this.state;
     const userFound = userDetails.find(
       (user) => user.id === parseInt(searchId, 10)
@@ -51,26 +51,35 @@ export default class LifeCycleMethods extends Component {
   render() {
     const { searchId, userFound } = this.state;
     return (
-      <>
-        <label>Enter User ID:</label>
-        <input
-          type="text"
-          onChange={this.Onchangehandler}
-          value={searchId}
-        ></input>
-        <button onClick={this.handleSearch}>Search</button>
-        {userFound ? (
-          <div>
-            <p>UserDetails</p>
-            <p>ID:{userFound.id}</p>
-            <p>Name:{userFound.name}</p>
-            <p>Email:{userFound.email}</p>
-          </div>
-        ) : (
-          <p>User Not Found</p>
-        )}
-        <p>{this.state.name}</p>
-      </>
+      this.state.unmount == false && (
+        <>
+          <label>Enter User ID:</label>
+          <input
+            type="text"
+            onChange={this.Onchangehandler}
+            value={searchId}
+          ></input>
+          <button onClick={this.handleSearch}>Search</button>
+          <button
+            onClick={() => {
+              this.setState({ unmount: true });
+            }}
+          >
+            click me
+          </button>
+          {userFound ? (
+            <div>
+              <p>UserDetails</p>
+              <p>ID:{userFound.id}</p>
+              <p>Name:{userFound.name}</p>
+              <p>Email:{userFound.email}</p>
+            </div>
+          ) : (
+            <p>User Not Found</p>
+          )}
+          <p>{this.state.name}</p>
+        </>
+      )
     );
   }
 }
