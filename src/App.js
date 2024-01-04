@@ -12,12 +12,14 @@ import './App.css';
 //import LoginForm from './FormHandling/LoginForm';
 //import TemperatureConvert from './Temperature/TemperatureConvert';
 //import TshirtFilter from './TshirtFilter/TshirtFilter';
-import ParentLifeCycleMethod from './LifeCycleMethods/ParentLifeCycleMethod';
+//import ParentLifeCycleMethod from './LifeCycleMethods/ParentLifeCycleMethod';
+//import ShouldComponentUpdate from './LifeCycleMethods/ShouldComponentUpdate';
+import PurComponent from './LifeCycleMethods/PurComponent';
 
 
 function App() {
   return (
-  <div><ParentLifeCycleMethod/></div>
+  <div><PurComponent/></div>
     
   );
 }
