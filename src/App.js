@@ -13,13 +13,14 @@ import './App.css';
 //import TemperatureConvert from './Temperature/TemperatureConvert';
 //import TshirtFilter from './TshirtFilter/TshirtFilter';
 //import ParentLifeCycleMethod from './LifeCycleMethods/ParentLifeCycleMethod';
-//import ShouldComponentUpdate from './LifeCycleMethods/ShouldComponentUpdate';
-import PurComponent from './LifeCycleMethods/PurComponent';
+import ShouldComponentUpdate from './LifeCycleMethods/ShouldComponentUpdate';
+//import PurComponent from './LifeCycleMethods/PurComponent';
+//import Accordian from './Accordian/Accordian';
 
 
 function App() {
   return (
-  <div><PurComponent/></div>
+  <div><ShouldComponentUpdate/></div>
     
   );
 }

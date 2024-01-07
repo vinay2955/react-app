@@ -14,16 +14,19 @@ export default class ShouldComponentUpdate extends Component {
     setTimeout(() => {
       this.setState({
         users: [
-          { id: 1, name: "vinay" },
+          { id: 1, name: "sai" },
           { id: 2, name: "khaja" },
         ],
       });
     }, 5000);
   }
   shouldComponentUpdate(nextProps, nextState) {
-    return this.state.users !== this.nextProps.users;
+    console.log("123", this.state.users);
+
+    return this.state.users[0].name !== nextState.users[0].name;
   }
   render() {
+    console.log("from render function", this.state.users);
     //const { users } = this.state;
     return (
       <>
