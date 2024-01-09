@@ -13,15 +13,22 @@ import './App.css';
 //import TemperatureConvert from './Temperature/TemperatureConvert';
 //import TshirtFilter from './TshirtFilter/TshirtFilter';
 //import ParentLifeCycleMethod from './LifeCycleMethods/ParentLifeCycleMethod';
-import ShouldComponentUpdate from './LifeCycleMethods/ShouldComponentUpdate';
+//import ShouldComponentUpdate from './LifeCycleMethods/ShouldComponentUpdate';
 //import PurComponent from './LifeCycleMethods/PurComponent';
 //import Accordian from './Accordian/Accordian';
+import Header from './Routing/Header';
+import { BrowserRouter as Routing } from 'react-router-dom';
+import Routers from './Routing/Routers';
 
 
 function App() {
   return (
-  <div><ShouldComponentUpdate/></div>
-    
+    <Routing>
+  <div>
+    <Header/>
+    <Routers/>
+    </div>
+    </Routing>
   );
 }
 
