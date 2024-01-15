@@ -1,13 +1,13 @@
-import React, { Component } from "react";
+import { useNavigate } from "react-router-dom";
 
-export class ContactUs extends Component {
-  // componentDidMount() {
-  //   throw new Error("test error");
-  // }
-
-  render() {
-    console.log("Home render");
-    return <div>ContactUs</div>;
-  }
+export default function ContactUs() {
+  const navigate = useNavigate();
+  return (
+    <div>
+      <h1>Contact us</h1>
+      <button onClick={() => navigate("/")} value="backpage">
+        backpage
+      </button>
+    </div>
+  );
 }
-export default ContactUs;
