@@ -27,20 +27,25 @@ import PageNotFound from './Routing/PageNotFound';
 import Post from './Routing/Post';
 import Routers from './Routing/Routers';
 import { useState } from 'react';
+import ButtonCount from './HOC/ButtonCount';
+import HoverCount from './HOC/HoverCount';
 
 
 
 function App() {
    const [isLoggedin, setIsLoggedin] = useState(false);
   return (
-
+<div>
+  <ButtonCount/>
+  <HoverCount/>
+</div>
     // <div>
     //   <ParentContext/>
     // </div>
-    <BrowserRouter>
-    <Header/>
-    <Routers isLoggedin={isLoggedin} setIsLoggedin={setIsLoggedin}/>
-    </BrowserRouter>
+    // <BrowserRouter>
+    // <Header/>
+    // <Routers isLoggedin={isLoggedin} setIsLoggedin={setIsLoggedin}/>
+    // </BrowserRouter>
   );
 }
 
