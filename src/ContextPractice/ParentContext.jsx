@@ -8,16 +8,28 @@ import C from "./C";
 
 export default function ParentContext() {
   //const user = { name: "vinay" };
-  const [posts, setPosts] = useState();
-  const [count, setCount] = useState(0);
+  // const [posts, setPosts] = useState();
+  // const [count, setCount] = useState(0);
+  const [appState, setAppState] = useState({
+    count: 0,
+    posts: [],
+  });
 
   useEffect(() => {
-    axios
-      .get("https://jsonplaceholder.typicode.com/posts")
-      .then((response) => setPosts(response.data));
+    axios.get(`https://jsonplaceholder.typicode.com/posts`).then((response) => {
+      const currentappState = { ...appState };
+      currentappState.posts = response.data;
+      setAppState(currentappState);
+    });
   }, []);
+  //const context = { posts: posts };
   return (
-    <UserContext.Provider value={{ count, setCount, posts }}>
+    <UserContext.Provider
+      value={{
+        setAppState,
+        appState,
+      }}
+    >
       <A />
     </UserContext.Provider>
   );
