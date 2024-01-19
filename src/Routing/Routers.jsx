@@ -4,14 +4,16 @@ import Home from "./Home";
 import ContactUs from "./ContactUs";
 import About from "./About";
 import PageNotFound from "./PageNotFound";
-import Post from "./Post";
+//import Post from "./Post";
 import PostDetails from "./PostDetails";
-import ProtectedRoute from "./ProtectedRoute";
+//import ProtectedRoute from "./ProtectedRoute";
 import Login from "./Login";
 import Users from "./Users";
 import InternalUser from "./InternalUser";
 import ExternalUser from "./ExternalUser";
 //import ErrorBoundary from "./ErrorBoundary";
+const Post = React.lazy(() => import("./Post"));
+const ProtectedRoute = React.lazy(() => import("./ProtectedRoute"));
 
 export default function Routers(props) {
   return (
@@ -22,7 +24,16 @@ export default function Routers(props) {
       <Route
         path="posts"
         element={
-          <ProtectedRoute element={<Post />} isLoggedin={props.isLoggedin} />
+          <React.Suspense fallback={<di>loading....</di>}>
+            <ProtectedRoute
+              element={
+                <React.Suspense fallback={<di>loading....</di>}>
+                  <Post />
+                </React.Suspense>
+              }
+              isLoggedin={props.isLoggedin}
+            />
+          </React.Suspense>
         }
       ></Route>
       <Route path="posts/:postId" element={<PostDetails />}></Route>

@@ -1,10 +1,17 @@
 import { useState, useEffect } from "react";
-import { Outlet, useParams, useSearchParams, Link } from "react-router-dom";
+import {
+  Outlet,
+  useParams,
+  useSearchParams,
+  Link,
+  useLocation,
+} from "react-router-dom";
 import axios from "axios";
 
 import React from "react";
 
 export default function Post() {
+  const location = useLocation();
   const params = useParams();
   const [posts, setPosts] = useState([]);
   const [currposts, setCurrPosts] = useState();
@@ -34,6 +41,7 @@ export default function Post() {
   }, [search]);
   return (
     <div style={{ padding: "1rem" }}>
+      User Name : {location?.state?.username}
       <button
         onClick={() => {
           setSearchParams({ filter: "Ideven" });

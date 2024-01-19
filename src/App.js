@@ -19,33 +19,61 @@ import './App.css';
 import Header from './Routing/Header';
 import { BrowserRouter  } from 'react-router-dom';
 import { Routes, Route } from "react-router-dom";
-import Home from './Routing/Home';
-import About from './Routing/About';
-import ContactUs from './Routing/ContactUs';
-import PageNotFound from './Routing/PageNotFound';
+//import Home from './Routing/Home';
+//import About from './Routing/About';
+//import ContactUs from './Routing/ContactUs';
+//import PageNotFound from './Routing/PageNotFound';
 //import ParentContext from './ContextPractice/ParentContext'
-import Post from './Routing/Post';
+//import Post from './Routing/Post';
 import Routers from './Routing/Routers';
-import { useState } from 'react';
-import ButtonCount from './HOC/ButtonCount';
-import HoverCount from './HOC/HoverCount';
+import { useEffect, useState } from 'react';
+import Login from './Routing/Login';
+//import ButtonCount from './HOC/ButtonCount';
+//import HoverCount from './HOC/HoverCount';
 
 
 
 function App() {
    const [isLoggedin, setIsLoggedin] = useState(false);
+   useEffect(()=>{
+    //cookies
+    // if(document.cookie){
+    //   const cookieArray = document.cookie.split('=')
+    //   if(cookieArray[0] === 'isLoggedin' && cookieArray[1] === 'true'){
+    //     setIsLoggedin(true)
+    //   }
+    // }
+
+    //session storage 
+
+    // const localString = sessionStorage.getItem('login')
+    // const login = JSON.parse(localString)
+    // const currtime = new Date().getTime();
+    // if(login && login.isLoggedin === true && login>currtime){
+    //   setIsLoggedin(true)
+    // }
+
+    //localstorage
+    
+    // const isLoggedin = localStorage.getItem('isLoggedin');
+    // if(isLoggedin && isLoggedin === 'true'){
+    //   setIsLoggedin(true);
+    // }
+
+   },[])
   return (
 <div>
-  <ButtonCount/>
-  <HoverCount/>
+  <BrowserRouter>
+     <Header/>
+    <Routers isLoggedin={isLoggedin} setIsLoggedin={setIsLoggedin}/>
+     </BrowserRouter>
+  {/* <ButtonCount/>
+  <HoverCount/> */}
 </div>
     // <div>
     //   <ParentContext/>
     // </div>
-    // <BrowserRouter>
-    // <Header/>
-    // <Routers isLoggedin={isLoggedin} setIsLoggedin={setIsLoggedin}/>
-    // </BrowserRouter>
+    
   );
 }
 
