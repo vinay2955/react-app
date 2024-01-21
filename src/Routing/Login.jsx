@@ -11,16 +11,19 @@ export default function Login(props) {
   const handleClick = () => {
     if (user.username === "vinay" && user.password === "vinay") {
       props.setIsLoggedin(true);
-      navigate("/posts");
-      //cookies
+      // navigate("/posts");
+      // cookies
       const now = new Date();
       const time = now.getTime() + 1 * 60 * 100;
       console.log("cookies clicked");
       now.setTime(time);
-      // document.cookie = "isLoggedin=true;expires=" + now.toUTCString();
+      document.cookie = "isLoggedin=true";
 
-      //local storage
-      localStorage.setItem("isLoggedin", "true");
+      // //local storage
+      // const now = new Date();
+      // const time = now.getTime() + 3 * 60 * 1000;
+      // const login = { isLoggedin: true, expiry: time };
+      // localStorage.setItem("login", JSON.stringify(login));
 
       //session storage
       // const now = new Date();

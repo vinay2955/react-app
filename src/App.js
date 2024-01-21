@@ -30,7 +30,8 @@ import { useEffect, useState } from 'react';
 import Login from './Routing/Login';
 //import ButtonCount from './HOC/ButtonCount';
 //import HoverCount from './HOC/HoverCount';
-
+import ButtonCounter from './RenderProps/ButtonCounter'
+import MouseOver from './RenderProps/MouseOver'
 
 
 function App() {
@@ -49,24 +50,28 @@ function App() {
     // const localString = sessionStorage.getItem('login')
     // const login = JSON.parse(localString)
     // const currtime = new Date().getTime();
-    // if(login && login.isLoggedin === true && login>currtime){
+    // if(login && login.isLoggedin === true && login.expiry>currtime){
     //   setIsLoggedin(true)
     // }
 
     //localstorage
     
-    // const isLoggedin = localStorage.getItem('isLoggedin');
-    // if(isLoggedin && isLoggedin === 'true'){
-    //   setIsLoggedin(true);
+    // const localStorageValue = localStorage.getItem('login')
+    // const login = JSON.parse(localStorageValue)
+    // const currtime= new Date().getTime();
+    // if(login && login.isLoggedin === true && login.expiry > currtime){
+    //   setIsLoggedin(true)
     // }
 
    },[])
   return (
 <div>
-  <BrowserRouter>
+  <ButtonCounter/>
+  <MouseOver/>
+  {/* <BrowserRouter>
      <Header/>
     <Routers isLoggedin={isLoggedin} setIsLoggedin={setIsLoggedin}/>
-     </BrowserRouter>
+     </BrowserRouter> */}
   {/* <ButtonCount/>
   <HoverCount/> */}
 </div>
