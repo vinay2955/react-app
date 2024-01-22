@@ -25,18 +25,19 @@ import { Routes, Route } from "react-router-dom";
 //import PageNotFound from './Routing/PageNotFound';
 //import ParentContext from './ContextPractice/ParentContext'
 //import Post from './Routing/Post';
-import Routers from './Routing/Routers';
-import { useEffect, useState } from 'react';
-import Login from './Routing/Login';
+//import Routers from './Routing/Routers';
+//import { useEffect, useState } from 'react';
+//import Login from './Routing/Login';
 //import ButtonCount from './HOC/ButtonCount';
 //import HoverCount from './HOC/HoverCount';
-import ButtonCounter from './RenderProps/ButtonCounter'
-import MouseOver from './RenderProps/MouseOver'
+//import ButtonCounter from './RenderProps/ButtonCounter'
+//import MouseOver from './RenderProps/MouseOver'
+import Counter from './Reducer/Counter';
 
 
 function App() {
-   const [isLoggedin, setIsLoggedin] = useState(false);
-   useEffect(()=>{
+   //const [isLoggedin, setIsLoggedin] = useState(false);
+  //  useEffect(()=>{
     //cookies
     // if(document.cookie){
     //   const cookieArray = document.cookie.split('=')
@@ -63,11 +64,12 @@ function App() {
     //   setIsLoggedin(true)
     // }
 
-   },[])
+  //  },[])
   return (
 <div>
-  <ButtonCounter/>
-  <MouseOver/>
+  <Counter/>
+  {/* <ButtonCounter/>
+  <MouseOver/> */}
   {/* <BrowserRouter>
      <Header/>
     <Routers isLoggedin={isLoggedin} setIsLoggedin={setIsLoggedin}/>
