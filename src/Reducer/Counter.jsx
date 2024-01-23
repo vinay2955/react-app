@@ -4,13 +4,14 @@ export default function Counter() {
   const countReducer = (state, action) => {
     switch (action.type) {
       case "increment":
-        return { count: state.count + 1 };
+        return { count: state.count + action.payload };
       case "decrement":
-        return { count: state.count - 1 };
+        return { count: state.count - action.payload };
       default:
         return state;
     }
   };
+
   const [counter, dispatch] = useReducer(countReducer, { count: 0 });
   return (
     <div>

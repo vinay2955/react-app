@@ -32,7 +32,11 @@ import { Routes, Route } from "react-router-dom";
 //import HoverCount from './HOC/HoverCount';
 //import ButtonCounter from './RenderProps/ButtonCounter'
 //import MouseOver from './RenderProps/MouseOver'
-import Counter from './Reducer/Counter';
+//import Counter from './Reducer/Counter';
+//import CounterInDec from './Reducer/CounterInDec';
+//import CounterApi from './Reducer/CounterApi'
+//import UserDetails from './Reducer/UserDetails';
+import UserMemo from './UseMemo/UserMemo';
 
 
 function App() {
@@ -67,7 +71,11 @@ function App() {
   //  },[])
   return (
 <div>
-  <Counter/>
+  <UserMemo/>
+  {/* <UserDetails/> */}
+  {/* <CounterApi/> */}
+  {/* <CounterInDec/> */}
+  {/* <Counter/> */}
   {/* <ButtonCounter/>
   <MouseOver/> */}
   {/* <BrowserRouter>
