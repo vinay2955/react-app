@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 //import ParentProduct from './Components/ParentProduct';
 //import Practice from './Components/ClassComponents';
 //import FunctionComponent from './Components/FunctionComponents'
@@ -16,8 +16,8 @@ import './App.css';
 //import ShouldComponentUpdate from './LifeCycleMethods/ShouldComponentUpdate';
 //import PurComponent from './LifeCycleMethods/PurComponent';
 //import Accordian from './Accordian/Accordian';
-import Header from './Routing/Header';
-import { BrowserRouter  } from 'react-router-dom';
+import Header from "./Routing/Header";
+import { BrowserRouter } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 //import Home from './Routing/Home';
 //import About from './Routing/About';
@@ -36,59 +36,63 @@ import { Routes, Route } from "react-router-dom";
 //import CounterInDec from './Reducer/CounterInDec';
 //import CounterApi from './Reducer/CounterApi'
 //import UserDetails from './Reducer/UserDetails';
-import UserMemo from './UseMemo/UserMemo';
-
+//import UserMemo from './UseMemo/UserMemo';
+import { Provider } from "react-redux";
+import store from "./Redux/store";
+import CounterUsingRedux from "./Redux/CounterUsingRedux";
 
 function App() {
-   //const [isLoggedin, setIsLoggedin] = useState(false);
+  //const [isLoggedin, setIsLoggedin] = useState(false);
   //  useEffect(()=>{
-    //cookies
-    // if(document.cookie){
-    //   const cookieArray = document.cookie.split('=')
-    //   if(cookieArray[0] === 'isLoggedin' && cookieArray[1] === 'true'){
-    //     setIsLoggedin(true)
-    //   }
-    // }
+  //cookies
+  // if(document.cookie){
+  //   const cookieArray = document.cookie.split('=')
+  //   if(cookieArray[0] === 'isLoggedin' && cookieArray[1] === 'true'){
+  //     setIsLoggedin(true)
+  //   }
+  // }
 
-    //session storage 
+  //session storage
 
-    // const localString = sessionStorage.getItem('login')
-    // const login = JSON.parse(localString)
-    // const currtime = new Date().getTime();
-    // if(login && login.isLoggedin === true && login.expiry>currtime){
-    //   setIsLoggedin(true)
-    // }
+  // const localString = sessionStorage.getItem('login')
+  // const login = JSON.parse(localString)
+  // const currtime = new Date().getTime();
+  // if(login && login.isLoggedin === true && login.expiry>currtime){
+  //   setIsLoggedin(true)
+  // }
 
-    //localstorage
-    
-    // const localStorageValue = localStorage.getItem('login')
-    // const login = JSON.parse(localStorageValue)
-    // const currtime= new Date().getTime();
-    // if(login && login.isLoggedin === true && login.expiry > currtime){
-    //   setIsLoggedin(true)
-    // }
+  //localstorage
+
+  // const localStorageValue = localStorage.getItem('login')
+  // const login = JSON.parse(localStorageValue)
+  // const currtime= new Date().getTime();
+  // if(login && login.isLoggedin === true && login.expiry > currtime){
+  //   setIsLoggedin(true)
+  // }
 
   //  },[])
   return (
-<div>
-  <UserMemo/>
-  {/* <UserDetails/> */}
-  {/* <CounterApi/> */}
-  {/* <CounterInDec/> */}
-  {/* <Counter/> */}
-  {/* <ButtonCounter/>
+    <div>
+      <Provider store={store}>
+        <CounterUsingRedux />
+      </Provider>
+      {/* <UserMemo /> */}
+      {/* <UserDetails/> */}
+      {/* <CounterApi/> */}
+      {/* <CounterInDec/> */}
+      {/* <Counter/> */}
+      {/* <ButtonCounter/>
   <MouseOver/> */}
-  {/* <BrowserRouter>
+      {/* <BrowserRouter>
      <Header/>
     <Routers isLoggedin={isLoggedin} setIsLoggedin={setIsLoggedin}/>
      </BrowserRouter> */}
-  {/* <ButtonCount/>
+      {/* <ButtonCount/>
   <HoverCount/> */}
-</div>
+    </div>
     // <div>
     //   <ParentContext/>
     // </div>
-    
   );
 }
 
