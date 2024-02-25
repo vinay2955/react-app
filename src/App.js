@@ -16,9 +16,10 @@ import "./App.css";
 //import ShouldComponentUpdate from './LifeCycleMethods/ShouldComponentUpdate';
 //import PurComponent from './LifeCycleMethods/PurComponent';
 //import Accordian from './Accordian/Accordian';
-import Header from "./Routing/Header";
-import { BrowserRouter } from "react-router-dom";
-import { Routes, Route } from "react-router-dom";
+//import Header from "./Routing/Header";
+//import { BrowserRouter, Router } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+//import { Routes, Route } from "react-router-dom";
 //import Home from './Routing/Home';
 //import About from './Routing/About';
 //import ContactUs from './Routing/ContactUs';
@@ -38,9 +39,15 @@ import { Routes, Route } from "react-router-dom";
 //import UserDetails from './Reducer/UserDetails';
 //import UserMemo from './UseMemo/UserMemo';
 import { Provider } from "react-redux";
-import store from "./Redux/store";
-import CounterUsingRedux from "./Redux/CounterUsingRedux";
-
+//import store from "./ReduxLoginForm/store";
+//import DisplayDataPage from "./ReduxLoginForm/displayData";
+//import LoginFormData from "./ReduxLoginForm/LoginFormData";
+//import store from "./UserRedux/store";
+import { store } from "./MiddleWareSaga/store";
+//import CounterUsingRedux from "./Redux/CounterUsingRedux";
+//import Users from "./UserRedux/Users";
+//import Prodcuts from "./UserRedux/products";
+import ProdcutDetailsComp from "./MiddleWareSaga/ProdcutDetailsComp";
 function App() {
   //const [isLoggedin, setIsLoggedin] = useState(false);
   //  useEffect(()=>{
@@ -75,7 +82,13 @@ function App() {
     <div>
       {/* feature branch test*/}
       <Provider store={store}>
-        <CounterUsingRedux />
+        <ProdcutDetailsComp />
+        {/* <Router>
+          <Routes>
+            <Route path="/display-data" element={<DisplayDataPage />} />
+            <Route path="/" element={<LoginFormData />} />
+          </Routes>
+        </Router> */}
       </Provider>
       {/* <UserMemo /> */}
       {/* <UserDetails/> */}
